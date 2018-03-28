@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container index">
+ 
+ 
+    <button bindtap="addVideo" class="btn"> 添加视频</button>
+    <button bindtap="addImage" class="btn"> 添加图片 </button>
+    <button bindtap="addText" class="btn"> 添加文字</button>
+      
+</view>
