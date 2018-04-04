@@ -10,12 +10,13 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
    
   },
-  //事件处理函数
+  //添加视频
   addVideo: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+  // 添加图片
   addImage: function () {
     wx.chooseImage({
       count: 1, // 默认9
@@ -23,11 +24,14 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        var tempFilePaths = res.tempFilePaths
-        console.dir(res);
+        var tempFilePaths = res.tempFilePaths  
+        wx.navigateTo({ // 调到图片详情页
+          url: '../imgShow/imgShow?paths=' + tempFilePaths
+        })
       }
     })
   },
+  // 添加文字
   addText: function () {
     wx.navigateTo({
       url: '../logs/logs'
